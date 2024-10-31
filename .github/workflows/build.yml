@@ -1,0 +1,33 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install
+        run: npm install
+
+      - name: Make Build dir
+        run: mkdir build
+
+      - name: Build
+        run: npm run build
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          token: ${{ secrets.SECRET }}
+          body_path: ./CHANGELOG.md
+          files: |
+            ./dist/**
+            ./CHANGELOG.md
+
