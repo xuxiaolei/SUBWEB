@@ -27,8 +27,14 @@ jobs:
       - name: Make Build dir
         run: mkdir build
 
+      # 先完成构建
       - name: NPM Build
         run: npm run build
+
+       #然后打压缩包
+      - name: pacakge dist
+        run: |
+          tar -czvf subweb.tar.gz -C dist .
 
       - name: Release
         uses: softprops/action-gh-release@v2
@@ -36,7 +42,4 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           body_path: ./CHANGELOG.md
           tag_name: v1.0.1
-          files: |
-            ./dist/**
-            ./CHANGELOG.md
-
+          files: subweb.tar.gz
