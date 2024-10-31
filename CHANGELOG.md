@@ -1,15 +1,9 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+订阅转换Web页面，支持订阅或ss/ssr/hysteria2/vmess/vless链接，多个链接每行一个或用 | 分隔。
 
-This project adheres
+基于原项目，完善了自己的配置。
 
-<!--
-Note: In this file, do not use the hard wrap in the middle of a sentence for compatibility with GitHub comment style markdown rendering.
--->
+## [1.0.2] - 2024-10-31
 
-## [Unreleased]
-
-## [1.0.0] - 2024-10-31
-
-- new deploy
+- 基于原项目修改了自己配置
