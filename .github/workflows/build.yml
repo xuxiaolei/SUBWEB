@@ -3,9 +3,8 @@ name: 🚀 Build And Release
 on:
   push:
     branches: [ "deploy" ]
-#  push:
-#    tags:
-#      - "v*"
+  pull_request:
+    branches: [ "deploy" ]
 
 jobs:
   build:
