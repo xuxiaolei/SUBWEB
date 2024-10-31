@@ -9,17 +9,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
-      - name: Install
+      - name: NPM Install
         run: npm install
 
       - name: Make Build dir
         run: mkdir build
 
-      - name: Build
+      - name: NPM Build
         run: npm run build
 
       - name: Release
