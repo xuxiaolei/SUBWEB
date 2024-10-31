@@ -73,7 +73,7 @@ export const backendConfig = [{
     value: 'http://localhost:25500/sub?'
 }];
 export const externalConfig = [{
-    label: 'CM规则',
+    label: '自定义规则',
     options: [{
         label: 'ITYet 识别港美地区 负载均衡',
         value: 'https://m.ityet.com/file/ACL4SSR/ACL4SSR_Online_Full_MultiMode_CF.ini'
