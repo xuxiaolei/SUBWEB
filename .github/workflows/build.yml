@@ -41,5 +41,5 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           body_path: ./CHANGELOG.md
-          tag_name: v1.0.1
+          tag_name: v1.0.2
           files: subweb.tar.gz
