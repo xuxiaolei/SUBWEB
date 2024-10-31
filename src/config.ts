@@ -54,6 +54,9 @@ export const targetConfig = [{
     value: 'loon'
 }];
 export const backendConfig = [{
+    label: 'nas.ityet.com(支持vless,hysteria2)',
+    value: 'http://nas.ityet.com:25500/sub?'
+}, {
     label: 'subapi.fxxk.dedyn.io(CM提供-负载均衡后端)',
     value: 'https://subapi.fxxk.dedyn.io/sub?'
 }, {
@@ -72,6 +75,9 @@ export const backendConfig = [{
 export const externalConfig = [{
     label: 'CM规则',
     options: [{
+        label: 'ITYet 识别港美地区 负载均衡',
+        value: 'https://m.ityet.com/file/ACL4SSR/ACL4SSR_Online_Full_MultiMode_CF.ini'
+    },{
         label: 'CM_Online 默认版 识别港美地区(与Github同步)',
         value: 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online.ini'
     }, {
