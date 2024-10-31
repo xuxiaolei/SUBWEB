@@ -1,4 +1,4 @@
-name: Release
+name: 🚀 Build And Release
 
 on:
   push:
@@ -34,8 +34,9 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          token: ${{ secrets.SECRET }}
+          token: ${{ secrets.GH_TOKEN }}
           body_path: ./CHANGELOG.md
+          tag_name: v1.0.1
           files: |
             ./dist/**
             ./CHANGELOG.md
