@@ -31,20 +31,34 @@
 
 基于项目[GitHub - CareyWang/sub-web](https://github.com/CareyWang/sub-web) 增加了远程配置[ACL4SSR](https://github.com/ACL4SSR/ACL4SSR)的选项，并合并 [ACL4SSR 在线订阅转换](https://acl4ssr-sub.github.io/) 中的部分配置，并且用<u>ts + html</u>的方式重写了一个简单页面，同时去除了短链生成功能(有需要的小伙伴可以自行添加)。
 
+## 部署使用
+
+下载项目代码，运行
+
+`npm install`
+
+`npm run build`
+
+即可在`dist`目录获得webpack打包后的静态文件。
 
 
-## 关于后端
+
+## 自定义配置
+
+后端参数很多，页面只提供了少部分常用的，如果有需求，可能需要修改`src/config.ts`中的选项配置，并修改`src/index.ts`中的`generateSubUrl`函数(都是傻瓜式的工作)
+
+## 关于后端部署
 
 ### 1.服务端代码
 
-#### 1）tindy2013大佬（不支持vless，hysteria2）
+#### 1）tindy2013大佬项目（不支持vless，hysteria2）
 项目地址：https://github.com/tindy2013/subconverter
 下载地址：https://github.com/tindy2013/subconverter/releases （自己选择对应平台）
 
-#### 2）不支持vless，hysteria2
+#### 2）vitaminx大佬项目 (支持vless，hysteria2)
 项目地址：https://github.com/vitaminx/subconverter-Hysteria
-下载地址：https://github.com/vitaminx/subconverter-Hysteria/releases
-备用地址：在`server/`目录下
+下载地址：https://github.com/vitaminx/subconverter-Hysteria/releases （自己选择对应平台）
+备用地址：在`server/`目录下，自己选择对应平台
 
 ### 2.使用说明
 
@@ -93,19 +107,3 @@ http://127.0.0.1:25500/sub?target=%TARGET%&url=%URL%&emoji=%EMOJI%····
 | classic       |  可选 | true / false              | 用于设置是否生成 Clash classical rule-provider                                                                                                                                                                      |
 | tls13         |  可选 | true / false              | 用于设置是否为节点增加tls1.3开启参数                                                                                                                                                                                       |
 | new_name      |  可选 | true / false              | 如果设置为 true，则将启用 Clash 的新组名称 (proxies, proxy-groups, rules)                                                                                                                                                  |
-
-## 使用
-
-下载项目代码，运行
-
-`npm install`
-
-`npm run build`
-
-即可在`dist`目录获得webpack打包后的静态文件。
-
-
-
-## 自定义
-
-后端参数很多，页面只提供了少部分常用的，如果有需求，可能需要修改`src/config.ts`中的选项配置，并修改`src/index.ts`中的`generateSubUrl`函数(都是傻瓜式的工作)
