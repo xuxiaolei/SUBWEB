@@ -55,7 +55,7 @@ export const targetConfig = [{
 }];
 export const backendConfig = [{
     label: 'nas.ityet.com(支持vless,hysteria2)',
-    value: 'http://nas.ityet.com:25500/sub?'
+    value: 'https://nas.ityet.com:2550/sub?'
 }, {
     label: 'subapi.fxxk.dedyn.io(CM提供-负载均衡后端)',
     value: 'https://subapi.fxxk.dedyn.io/sub?'
