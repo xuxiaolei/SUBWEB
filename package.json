@@ -11,8 +11,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/jquery": "^3.5.14",
+    "@types/jquery": "^3.5.33",
     "@types/layui-src": "^2.6.0",
+    "@types/node": "^24.3.0",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "clean-webpack-plugin": "^4.0.0",
