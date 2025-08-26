@@ -20,6 +20,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
+    "dotenv": "^17.2.1",
     "eslint": "^8.20.0",
     "html-webpack-plugin": "^5.5.0",
     "less": "^4.1.3",

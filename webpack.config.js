@@ -6,6 +6,8 @@ const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const webpack = require('webpack'); // 导入 webpack
+require('dotenv').config(); // 加载 .env 文件
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
@@ -67,6 +69,9 @@ module.exports = {
                 { from: "public/js/layui.js", to: "js/layui.js" },
                 { from: "public/css/layui.css", to: "css/layui.css" }
             ],
+        }),
+        new webpack.DefinePlugin({
+            'process.env.BACKEND_CONFIG': JSON.stringify(process.env.BACKEND_CONFIG),
         })
     ],
     resolve: {

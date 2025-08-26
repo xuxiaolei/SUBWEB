@@ -19,7 +19,3 @@ export interface Options {
 
 declare const layui: any;
 declare const $: any;
-
-interface Window {
-    BACKEND_CONFIG_ENV: string;
-}
