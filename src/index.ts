@@ -4,23 +4,24 @@ import { backendConfig as defaultBackendConfig, externalConfig, targetConfig } f
 
 let subUrl = '';
 
-// 优先从环境变量获取 backendConfig，如果获取不到则使用默认配置
+// 优先从全局变量获取 backendConfig，如果获取不到则使用默认配置
 const backendConfig = (() => {
     try {
-        const envBackendConfig = process.env.BACKEND_CONFIG;
+        // 检查 window 对象是否存在 BACKEND_CONFIG_ENV
+        const envBackendConfig = (window as any).BACKEND_CONFIG_ENV;
         //打印环境变量 BACKEND_CONFIG
-        console.log('环境变量 BACKEND_CONFIG:', envBackendConfig);
+        console.log('全局变量 BACKEND_CONFIG_ENV:', envBackendConfig);
         if (envBackendConfig) {
             const parsedConfig = JSON.parse(envBackendConfig);
             // 验证解析后的配置是否符合预期格式
             if (Array.isArray(parsedConfig) && parsedConfig.every(item => typeof item === 'object' && 'label' in item && 'value' in item)) {
                 return parsedConfig;
             } else {
-                console.warn('环境变量 BACKEND_CONFIG 格式不正确，将使用默认配置。');
+                console.warn('全局变量 BACKEND_CONFIG_ENV 格式不正确，将使用默认配置。');
             }
         }
     } catch (e) {
-        console.error('解析环境变量 BACKEND_CONFIG 失败，将使用默认配置。', e);
+        console.error('解析全局变量 BACKEND_CONFIG_ENV 失败，将使用默认配置。', e);
     }
     return defaultBackendConfig;
 })();
