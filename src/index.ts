@@ -9,7 +9,7 @@ const backendConfig = (() => {
     try {
         const envBackendConfig = process.env.BACKEND_CONFIG;
         //打印环境变量 BACKEND_CONFIG
-        
+        console.log('环境变量 BACKEND_CONFIG:', envBackendConfig);
         if (envBackendConfig) {
             const parsedConfig = JSON.parse(envBackendConfig);
             // 验证解析后的配置是否符合预期格式
