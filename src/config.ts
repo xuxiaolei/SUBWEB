@@ -57,6 +57,9 @@ export const backendConfig = [{
     label: 'nas.ityet.com(支持vless,hysteria2)',
     value: 'https://nas.ityet.com:2550/sub?'
 }, {
+    label: 'CloudConverter(支持vless,hysteria2)',
+    value: 'https://subcvt.ityet.com/sub?'
+}, {
     label: 'subapi.fxxk.dedyn.io(CM提供-负载均衡后端)',
     value: 'https://subapi.fxxk.dedyn.io/sub?'
 }, {
